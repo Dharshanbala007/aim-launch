@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#000000">
+  <title>AIM — Launch</title>
+  <meta name="description" content="Watch the 60-second launch film of AIM, the student association of the Department of AI &amp; DS at NSCET, Theni, then open the AIM website.">
+  <link rel="icon" type="image/png" href="assets/aim-seal-192.png">
+
+  <!-- Social preview. These need absolute addresses: change dharshanbala007.github.io/aim-launch if this site is hosted elsewhere. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AIM is now online — watch the launch film">
+  <meta property="og:description" content="Sixty seconds on the student association of the Department of AI &amp; DS at NSCET, Theni.">
+  <meta property="og:url" content="https://dharshanbala007.github.io/aim-launch/">
+  <meta property="og:image" content="https://dharshanbala007.github.io/aim-launch/assets/aim-promo-poster.jpg">
+  <meta property="og:image:width" content="1920">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:video" content="https://dharshanbala007.github.io/aim-launch/assets/aim-promo.mp4">
+  <meta property="og:video:type" content="video/mp4">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="root" data-phase="idle">
+
+  <!-- Background: a grid that draws itself, glowing points, corner marks, floating specks. -->
+  <svg class="grid" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+        <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(100, 116, 139, 0.1)" stroke-width="0.5"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid)"/>
+    <line class="grid-line" x1="0" y1="20%" x2="100%" y2="20%" style="animation-delay: .5s"/>
+    <line class="grid-line" x1="0" y1="80%" x2="100%" y2="80%" style="animation-delay: 1s"/>
+    <line class="grid-line" x1="20%" y1="0" x2="20%" y2="100%" style="animation-delay: 1.5s"/>
+    <line class="grid-line" x1="80%" y1="0" x2="80%" y2="100%" style="animation-delay: 2s"/>
+    <line class="grid-line" x1="50%" y1="0" x2="50%" y2="100%" style="animation-delay: 2.5s"/>
+    <line class="grid-line" x1="0" y1="50%" x2="100%" y2="50%" style="animation-delay: 3s"/>
+    <circle class="dot" cx="20%" cy="20%" r="2" style="animation-delay: 3s"/>
+    <circle class="dot" cx="80%" cy="20%" r="2" style="animation-delay: 3.2s"/>
+    <circle class="dot" cx="20%" cy="80%" r="2" style="animation-delay: 3.4s"/>
+    <circle class="dot" cx="80%" cy="80%" r="2" style="animation-delay: 3.6s"/>
+    <circle class="dot" cx="50%" cy="50%" r="1.5" style="animation-delay: 4s"/>
+  </svg>
+  <div class="corner tl" aria-hidden="true" style="animation-delay: 4s"><i></i></div>
+  <div class="corner tr" aria-hidden="true" style="animation-delay: 4.2s"><i></i></div>
+  <div class="corner bl" aria-hidden="true" style="animation-delay: 4.4s"><i></i></div>
+  <div class="corner br" aria-hidden="true" style="animation-delay: 4.6s"><i></i></div>
+  <div class="floater" aria-hidden="true" style="top: 25%; left: 15%; animation-delay: .5s"></div>
+  <div class="floater" aria-hidden="true" style="top: 60%; left: 85%; animation-delay: 1s"></div>
+  <div class="floater" aria-hidden="true" style="top: 40%; left: 10%; animation-delay: 1.5s"></div>
+  <div class="floater" aria-hidden="true" style="top: 75%; left: 90%; animation-delay: 2s"></div>
+
+  <!-- The page. Edit the words here: data-words makes them rise in one by one (from/step are milliseconds). -->
+  <div class="fg" id="fg">
+    <div class="top">
+      <img class="seal reveal" src="assets/aim-seal-192.png" alt="" width="48" height="48">
+      <p class="label" data-words data-from="0" data-step="300">Association for Intelligent Minds</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="mid">
+      <h1 class="underline" data-words data-from="700">Great ideas grow together,</h1>
+      <p class="purpose" data-words data-from="1400" data-step="110">AIM is a student-focused space for learning, collaboration, innovation, and responsible technology practice.</p>
+      <i class="tick l reveal" aria-hidden="true" style="animation-delay: 3.2s"></i>
+      <i class="tick r reveal" aria-hidden="true" style="animation-delay: 3.4s"></i>
+    </div>
+
+    <div class="bottom">
+      <div class="rule"></div>
+      <button class="play late" id="play" type="button" aria-label="Play the AIM launch film" style="animation-delay: 3s">
+        <span class="ring" aria-hidden="true"></span>
+        <svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.86l11-6.86a1 1 0 0 0 0-1.72l-11-6.86A1 1 0 0 0 8 5.14z"/></svg>
+      </button>
+      <p class="label" data-words data-from="3200" data-step="200">Watch. Then launch.</p>
+      <div class="dots reveal" aria-hidden="true" style="animation-delay: 4.2s"><i></i><i></i><i></i></div>
+    </div>
+  </div>
+
+  <div class="glow" id="glow" aria-hidden="true"></div>
+  <div id="ripples" aria-hidden="true"></div>
+
+  <!-- The film. Hidden until Play; when it ends, the Launch button takes its place. -->
+  <div class="stage" id="stage" role="dialog" aria-modal="true" aria-label="AIM launch film" data-phase="idle" inert>
+    <video id="film" src="assets/aim-promo.mp4" poster="assets/aim-promo-poster.jpg" preload="metadata" playsinline controls controlslist="nofullscreen"></video>
+    <div class="bar">
+      <button class="round" id="full" type="button" aria-label="Full screen" hidden>
+        <svg class="i-max" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+        <svg class="i-min" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/></svg>
+      </button>
+      <button class="round" id="close" type="button" aria-label="Close the film">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="end">
+      <p class="label" id="end-label">The AIM website is live</p>
+      <!-- The one place the website address lives. -->
+      <a class="launch" id="launch" href="https://aim-nscet.pages.dev/">
+        Launch app
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+      </a>
+      <button class="ghost" id="again" type="button">Watch again</button>
+    </div>
+  </div>
+
+  <p class="sr-only" id="status" role="status"></p>
+  <div class="sr-only">
+    <h2>The film, as text</h2>
+    <ol>
+      <li>Great ideas don’t grow alone. They grow together.</li>
+      <li>Association for Intelligent Minds, the student association of the Department of Artificial Intelligence and Data Science, NSCET, Theni.</li>
+      <li>AIM is built on learning, collaboration, innovation and responsible practice.</li>
+      <li>AIM 2024: inaugurated on 9 November 2024 at the Sir C.V. Raman Auditorium, alongside the IT association Nexus.</li>
+      <li>AIM 2025: on 1 September 2025, two student clubs launched and seven student-built apps were shown live.</li>
+      <li>Introducing the new AIM website: About, Activities, Achievements and Staff.</li>
+      <li>Verified, not invented: institutional facts come only from official NSCET and AICTE sources, each one cited.</li>
+      <li>Now live. Scan the code, or launch the app.</li>
+    </ol>
+  </div>
+  <noscript>
+    <p class="nojs"><a href="assets/aim-promo.mp4">Watch the film</a> · <a href="https://aim-nscet.pages.dev/">Launch app</a></p>
+  </noscript>
+</main>
+<script src="app.js" defer></script>
+</body>
+</html>
